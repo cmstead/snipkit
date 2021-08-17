@@ -1,0 +1,9 @@
+{
+    "Test Snippet": {
+        "prefix": "test-snippet",
+        "body": [
+            "Test line ${1:testing} $1"
+        ],
+        "description": "This is a test snippet"
+    }
+}

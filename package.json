@@ -1,0 +1,55 @@
+{
+	"name": "snipkit",
+	"displayName": "SnipKit",
+	"description": "Enhanced snippet creation and editing for VS Code",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.46.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Snippets",
+		"Formatters",
+		"Other"
+	],
+	"activationEvents": [
+	],
+	"main": "./extension.js",
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.46.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.15.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.1.2",
+		"vscode-test": "^1.4.1"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "snipkit",
+				"extensions": [
+					".snipkit"
+				],
+				"configuration": "./configs/snipkit.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"scopeName": "inline.snipkit",
+				"path": "./syntaxes/snippet.tmLanguage.json",
+				"injectTo": ["source.json"],
+				"embeddedLanguages": {
+					"meta.embedded.inline.snipkit": "snipkit"
+				}
+			}
+		]
+	}
+}
