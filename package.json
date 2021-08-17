@@ -17,7 +17,7 @@
 	"scripts": {
 		"lint": "eslint .",
 		"pretest": "npm run lint",
-		"test": "node ./test/runTest.js"
+		"test": "mocha ./test/**/*.test.js && gittey commit"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.3",
