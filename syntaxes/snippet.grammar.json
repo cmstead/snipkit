@@ -11,14 +11,7 @@
         "snipkit-string": {
             "name": "snipkit.template.line",
             "contentName": "meta.embedded.inline.snipkit",
-            "begin": "(\\s+)(\")",
-            "beginCaptures": {
-                "1": { "name": "punctuation.quote.open"}
-            },
-            "end": "([^\\])(\")(\\,)?\n",
-            "endCaptures": {
-                "1": { "name": "punctuation.quote.close"}
-            },
+            "match": ".*",
             "patterns": [
                 {
                     "include": "#snipkit-stop"

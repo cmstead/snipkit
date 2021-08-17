@@ -44,7 +44,7 @@
 		"grammars": [
 			{
 				"scopeName": "inline.snipkit",
-				"path": "./syntaxes/snippet.tmLanguage.json",
+				"path": "./syntaxes/snippet.grammar.json",
 				"injectTo": ["source.json"],
 				"embeddedLanguages": {
 					"meta.embedded.inline.snipkit": "snipkit"
