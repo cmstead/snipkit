@@ -32,23 +32,18 @@
 		"vscode-test": "^1.4.1"
 	},
 	"contributes": {
-		"languages": [
+		"snippets": [
 			{
-				"id": "snipkit",
-				"extensions": [
-					".snipkit"
-				],
-				"configuration": "./configs/snipkit.configuration.json"
-			}
-		],
-		"grammars": [
+				"language": "json",
+				"path": "./snippets.json"
+			},
 			{
-				"scopeName": "inline.snipkit",
-				"path": "./syntaxes/snippet.grammar.json",
-				"injectTo": ["source.json"],
-				"embeddedLanguages": {
-					"meta.embedded.inline.snipkit": "snipkit"
-				}
+				"language": "jsonc",
+				"path": "./snippets.json"
+			},
+			{
+				"language": "plaintext",
+				"path": "./snippets.json"
 			}
 		]
 	}
