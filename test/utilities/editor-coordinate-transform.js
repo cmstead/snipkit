@@ -23,11 +23,11 @@ function transformEditorRangeToSelection(editorRange = defaultEditorRange) {
     return {
         start: {
             line: editorRange.start.line,
-            column: editorRange.start.column - 1
+            character: editorRange.start.column - 1
         },
         end: {
             line: editorRange.end.line,
-            column: editorRange.end.column - 1
+            character: editorRange.end.column - 1
         }
     }
 }
