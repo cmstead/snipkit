@@ -1,0 +1,7 @@
+[
+  "object",
+  "property",
+  "object",
+  "property",
+  "array"
+]

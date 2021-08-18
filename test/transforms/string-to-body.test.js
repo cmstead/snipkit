@@ -1,5 +1,3 @@
-require('../utilities/approvals').configure();
-
 const { assert } = require('chai');
 
 const { transformToBodyText } = require('../../modules/transforms/string-to-body');

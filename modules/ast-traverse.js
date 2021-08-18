@@ -1,33 +1,5 @@
 function defaultEnter() { }
 function defaultLeave() { }
-
-// document -- child
-
-// object -- properties
-// property -- key, value
-// key -- type, value
-
-// array -- items
-
-// non-collection values -- type, value
-
-/*
-Types:
-
-base type metadata: type, value
-
-string
-number
-boolean
-null
-key
-
-document -- children: child
-object -- children: properties
-array -- children: items
-property -- children: key, value
-*/
-
 function defaultFallback(node) {
     throw new Error(`Unknown node type '${node.type}'. If this node type is expected add a fallback method.`);
 }

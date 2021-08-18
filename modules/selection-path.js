@@ -14,15 +14,19 @@ function nodeEndContainsSelectionEnd(nodePosition, selectionLocation) {
 
 function getPropertyPosition(node) {
     return {
-        start: node.key.position.start,
-        end: node.value.position.end
+        start: getNodePosition(node.key).start,
+        end: getNodePosition(node.value).end
     }
 }
 
-function nodeContainsSelection(node, selectionLocation) {
-    const nodePosition = node.type === 'property'
+function getNodePosition(node) {
+    return node.type === 'property'
         ? getPropertyPosition(node)
         : node.position;
+}
+
+function nodeContainsSelection(node, selectionLocation) {
+    const nodePosition = getNodePosition(node);
 
     return nodeStartContainsSelectionStart(nodePosition, selectionLocation)
         && nodeEndContainsSelectionEnd(nodePosition, selectionLocation);
@@ -39,12 +43,12 @@ This provides a means to do a vertical search for surrounding scopes and other
 ancestor nodes without needing to traverse the entire AST.
 */
 
-function buildNodePath(parsedSource, selectionLocation) {
+function buildSelectionPath(parsedSource, selectionPosition) {
     let nodePath = [];
 
     astTraverse.traverse(parsedSource, {
         enter: function (node) {
-            if (nodeContainsSelection(node, selectionLocation)) {
+            if (nodeContainsSelection(node, selectionPosition)) {
                 nodePath.push(node);
             }
         }
@@ -54,6 +58,6 @@ function buildNodePath(parsedSource, selectionLocation) {
 }
 
 module.exports = {
-    buildNodePath,
+    buildSelectionPath,
     nodeContainsSelection
 };
