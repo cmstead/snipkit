@@ -12,7 +12,6 @@
 		"Formatters",
 		"Other"
 	],
-	"activationEvents": [],
 	"main": "./extension.js",
 	"scripts": {
 		"lint": "eslint .",
@@ -32,7 +31,18 @@
 		"typescript": "^4.1.2",
 		"vscode-test": "^1.4.1"
 	},
+	"public": true,
+	"activationEvents": [
+		"onCommand:cmstead.snipkit.indent"
+	],
 	"contributes": {
+		"commands": [
+			{
+				"command": "cmstead.snipkit.indent",
+				"title": "SnipKit: Indent Lines",
+				"description": "Indent selected body lines"
+			}
+		],
 		"snippets": [
 			{
 				"language": "json",
@@ -43,5 +53,8 @@
 				"path": "./snippets.json"
 			}
 		]
+	},
+	"dependencies": {
+		"json-ast": "^2.1.7"
 	}
 }
