@@ -20,8 +20,6 @@ describe('selection path', function () {
 
         const selectedPosition = transformSelectionToPosition(selection);
 
-            console.log(selectedPosition);
-
         const selectionPath = buildSelectionPath(parsedSource.child, selectedPosition);
         const selectedNodeTypes = selectionPath.map(node => node.type);
 
