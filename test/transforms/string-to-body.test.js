@@ -7,7 +7,7 @@ const { transformToBodyText} = require('../../modules/transforms/string-to-body'
 describe('Transform selected string text to snippet body text', function () {
     it('transforms a single line into body-safe text',  function () {
         const rawText = `      this is a test with "quotes" and a $-sign`;
-        const expectedText = `"this is a test with \\"quotes\\" and a \\$-sign"`;
+        const expectedText = `"this is a test with \\"quotes\\" and a \\\\$-sign"`;
 
         const actualText = transformToBodyText(rawText);
 
@@ -21,10 +21,10 @@ describe('Transform selected string text to snippet body text', function () {
             '            MOARRRR!$$$!'
         ].join('\n');
         const expectedText = [
-            `"this is a test with \\"quotes\\" and a \\$-sign"`,
+            `"this is a test with \\"quotes\\" and a \\\\$-sign"`,
             '"more text"',
             '"\\"MORE!\\""',
-            '"MOARRRR!\\$\\$\\$!"'
+            '"MOARRRR!\\\\$\\\\$\\\\$!"'
         ].join(',\n');
 
         const actualText = transformToBodyText(rawText);

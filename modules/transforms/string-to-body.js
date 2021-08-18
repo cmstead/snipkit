@@ -5,7 +5,7 @@ function transformTextLine(textToTransform) {
         .replace(/(^|[^\\])\"/ig, "$1\\\"");
 
     while(dollarPattern.test(transformedText)) {
-        transformedText = transformedText.replace(dollarPattern, '$1\\$');
+        transformedText = transformedText.replace(dollarPattern, '$1\\\\$');
     }
 
     return `"${transformedText}"`;
