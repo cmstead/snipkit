@@ -33,7 +33,8 @@
 	},
 	"public": true,
 	"activationEvents": [
-		"onCommand:cmstead.snipkit.indent"
+		"onCommand:cmstead.snipkit.indent",
+		"onCommand:cmstead.snipkit.outdent"
 	],
 	"contributes": {
 		"commands": [
@@ -41,6 +42,25 @@
 				"command": "cmstead.snipkit.indent",
 				"title": "SnipKit: Indent Lines",
 				"description": "Indent selected body lines"
+			},
+			{
+				"command": "cmstead.snipkit.outdent",
+				"title": "SnipKit: Outdent Lines",
+				"description": "Outdent selected body lines"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "cmstead.snipkit.indent",
+				"key": "ctrl+alt+]",
+				"mac": "cmd+alt+]",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "cmstead.snipkit.outdent",
+				"key": "ctrl+alt+[",
+				"mac": "cmd+alt+[",
+				"when": "editorHasSelection"
 			}
 		],
 		"snippets": [

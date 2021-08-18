@@ -4,7 +4,7 @@ const { transformLocationToRange } = require("../../edit-utils/textEditTransform
 const { getSourceSelection } = require("../../source-utilities");
 const { validateUserInput } = require("../../validatorService");
 
-function indent() {
+function outdent() {
     let actionSetup = null;
     let sourceSelection = null;
     let indentedSelection = null;
@@ -20,14 +20,14 @@ function indent() {
                 sourceSelection
                     .split(/\r?\n/g)
                     .reduce((result, line) =>
-                        result && /^\s*"?/.test(line)),
+                        result && /^\s*(")?/.test(line)),
             message: "Invalid body selection: not all lines begin with an open quote"
         }))
         .then((newSourceSelection) => sourceSelection = newSourceSelection)
 
         .then(() => indentedSelection = sourceSelection
             .split(/\r?\n/g)
-            .map((line) => line.replace(/^(\s*)"/, '$1\"\\t'))
+            .map((line) => line.replace(/^(\s*)("\\t)/, '$1\"'))
             .join('\n'))
 
         .then(() => {
@@ -44,5 +44,5 @@ function indent() {
 }
 
 module.exports = {
-    indent
+    outdent
 };
