@@ -1,8 +1,12 @@
+const dollarPattern = /([^\\])(\$)/ig;
 function transformTextLine(textToTransform) {
-    const transformedText = textToTransform
+    let transformedText = textToTransform
         .trim()
-        .replace(/(^|[^\\])\"/ig, "$1\\\"")
-        .replace(/(^|[^\\])\$/ig, "$1\\$");
+        .replace(/(^|[^\\])\"/ig, "$1\\\"");
+
+    while(dollarPattern.test(transformedText)) {
+        transformedText = transformedText.replace(dollarPattern, '$1\\$');
+    }
 
     return `"${transformedText}"`;
 }
