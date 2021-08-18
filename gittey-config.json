@@ -34,11 +34,11 @@
         },
         {
             "name": "push-minor",
-            "command": "gittey pull; node ./version-bump minor; git push origin main --tags"
+            "command": "gittey pull; node ./version-bump minor; git push origin master --tags"
         },
         {
             "name": "push-patch",
-            "command": "gittey pull; node ./version-bump patch; git push origin main --tags"
+            "command": "gittey pull; node ./version-bump patch; git push origin master --tags"
         }
     ],
     "collaborators": [
