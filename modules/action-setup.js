@@ -31,11 +31,28 @@ function actionSetup() {
     }
 }
 
+function textOnlyActionSetup() {
+    const activeTextEditor = vscode.window.activeTextEditor;
+    const location = transformSelectionToLocation(activeTextEditor.selection);
+    const source = activeTextEditor.document.getText();
+
+    return {
+        activeTextEditor,
+        source,
+        location
+    }
+}
+
+function asyncTextOnlyActionSetup() {
+    return Promise.resolve(textOnlyActionSetup());
+}
+
 function asyncActionSetup() {
     return Promise.resolve(actionSetup());
 }
 
 module.exports = {
     actionSetup,
-    asyncActionSetup
+    asyncActionSetup,
+    asyncTextOnlyActionSetup
 };
