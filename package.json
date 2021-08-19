@@ -22,7 +22,8 @@
         "lint": "eslint .",
         "pretest": "npm run lint",
         "version-bump-patch": "node ./version-bump patch",
-        "test": "mocha ./test/**/*.test.js && gittey commit"
+        "test": "mocha ./test/**/*.test.js && gittey commit",
+        "build": "vsce package"
     },
     "dependencies": {
         "json-ast": "^2.1.7"
@@ -38,6 +39,7 @@
         "glob": "^7.1.6",
         "mocha": "^8.4.0",
         "typescript": "^4.1.2",
+        "vsce": "^1.96.1",
         "vscode-test": "^1.4.1"
     },
     "public": true,
