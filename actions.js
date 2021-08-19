@@ -23,5 +23,10 @@ module.exports = [
         commandName: 'formatAsBody',
         path: './modules/commands/format-as-body/format-as-body-action',
         functionName: 'formatAsBody'
+    },
+    {
+        commandName: 'editSnippets',
+        path: './modules/commands/edit-snippets/edit-snippets-action',
+        functionName: 'editSnippets'
     }
 ];

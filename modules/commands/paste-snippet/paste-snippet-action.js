@@ -12,10 +12,10 @@ function pasteSnippet() {
 
         .then(() => vscode.env.clipboard.readText())
         .then((clipboardText) => transformToBodyText(clipboardText))
-        .then((bodyText) => vscode.env.clipboard.writeText(bodyText))
 
-        .then(() => {
-            const snippetText = require('../../snippets/snippet-snippet.json').body.join('\n');
+        .then((bodyText) => {
+            const snippetJson = require('../../snippets/snippet-snippet.json');
+            const snippetText = snippetJson.body.join('\n').replace('${body}', bodyText);
 
             return insertSnippetIntoDocument(actionSetup.location, snippetText);
         })
