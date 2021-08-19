@@ -49,7 +49,8 @@
         "onCommand:cmstead.snipkit.insertSnippet",
         "onCommand:cmstead.snipkit.pasteSnippet",
         "onCommand:cmstead.snipkit.formatAsBody",
-        "onCommand:cmstead.snipkit.editSnippets"
+        "onCommand:cmstead.snipkit.editSnippets",
+        "onCommand:cmstead.snipkit.selectAction"
     ],
     "contributes": {
         "commands": [
@@ -82,6 +83,11 @@
                 "command": "cmstead.snipkit.editSnippets",
                 "title": "SnipKit: Edit/Configure Snippets",
                 "description": "Open edit/config snippet file selection list"
+            },
+            {
+                "command": "cmstead.snipkit.selectAction",
+                "title": "SnipKit: Select SnipKit Action",
+                "description": "Select a SnipKit action to run at cursor position"
             }
         ],
         "keybindings": [
@@ -97,18 +103,13 @@
             },
             {
                 "command": "cmstead.snipkit.insertSnippet",
-                "key": "ctrl+alt+s i",
-                "mac": "cmd+alt+s i"
+                "key": "ctrl+alt+i",
+                "mac": "cmd+alt+i"
             },
             {
-                "command": "cmstead.snipkit.pasteSnippet",
-                "key": "ctrl+alt+s p",
-                "mac": "cmd+alt+s p"
-            },
-            {
-                "command": "cmstead.snipkit.formatAsBody",
-                "key": "ctrl+alt+s f",
-                "mac": "cmd+alt+s f"
+                "command": "cmstead.snipkit.selectAction",
+                "key": "ctrl+alt+k",
+                "mac": "cmd+alt+k"
             }
         ],
         "snippets": [
@@ -155,8 +156,12 @@
                     "when": "editorLangId == json || editorLangId == jsonc"
                 },
                 {
-                    "command": "cmstead.snipkit.editSnippets",
+                    "command": "cmstead.snipkit.selectAction",
                     "group": "snipkit@2"
+                },
+                {
+                    "command": "cmstead.snipkit.editSnippets",
+                    "group": "snipkit@3"
                 }
             ],
             "cmstead.snipkit.actions": [
