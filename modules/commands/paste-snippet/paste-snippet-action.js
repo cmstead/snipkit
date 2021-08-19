@@ -7,7 +7,7 @@ function pasteSnippet() {
         .then((newActionSetup) => actionSetup = newActionSetup)
 
         .then(() => {
-            const snippetSource = require('../../snippets')['Snippet snippet'];
+            const snippetText = require('../../snippets/snippet-snippet.json').body;
         })
 
         .catch(function(error){
