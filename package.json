@@ -44,7 +44,8 @@
     "activationEvents": [
         "onCommand:cmstead.snipkit.indent",
         "onCommand:cmstead.snipkit.outdent",
-        "onCommand:cmstead.snipkit.insertSnippet"
+        "onCommand:cmstead.snipkit.insertSnippet",
+        "onCommand:cmstead.snipkit.pasteSnippet"
     ],
     "contributes": {
         "commands": [
@@ -62,6 +63,11 @@
                 "command": "cmstead.snipkit.insertSnippet",
                 "title": "SnipKit: Insert Snippet",
                 "description": "Insert snippet into document snippet document"
+            },
+            {
+                "command": "cmstead.snipkit.pasteSnippet",
+                "title": "SnipKit: Paste New Snippet",
+                "description": "Paste snippet from clipboard into document"
             }
         ],
         "keybindings": [
@@ -79,6 +85,11 @@
                 "command": "cmstead.snipkit.insertSnippet",
                 "key": "ctrl+alt+s i",
                 "mac": "cmd+alt+s i"
+            },
+            {
+                "command": "cmstead.snipkit.pasteSnippet",
+                "key": "ctrl+alt+s p",
+                "mac": "cmd+alt+s p"
             }
         ],
         "snippets": [

@@ -23,10 +23,18 @@ function activate(context) {
 	let disposable3 = vscode.commands.registerCommand('cmstead.snipkit.insertSnippet', function () {
 		require('./modules/commands/insert-snippet/insert-snippet-action')
 			.insertSnippet()
-		// 	.then(formatDocument);
+			.then(formatDocument);
 	});
 
 	context.subscriptions.push(disposable3);
+
+	let disposable4 = vscode.commands.registerCommand('cmstead.snipkit.pasteSnippet', function () {
+		require('./modules/commands/paste-snippet/paste-snippet-action')
+			.pasteSnippet()
+			.then(formatDocument);
+	});
+
+	context.subscriptions.push(disposable4);
 }
 
 function deactivate() { }

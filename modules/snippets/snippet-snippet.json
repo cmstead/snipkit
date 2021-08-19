@@ -1,7 +1,13 @@
 {
     "prefix": "snippet",
     "body": [
-        ""
+        "\"$1\": {",
+        "\t\"prefix\": \"$2\",",
+        "\t\"body\": [",
+        "\t\t${CLIPBOARD}",
+        "\t],",
+        "\t\"description\": \"$4\"",
+        "},"
     ],
     "description": "A snippet for creating new snippets"
 }
