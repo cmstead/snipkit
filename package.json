@@ -7,7 +7,7 @@
         "type": "git",
         "url": "https://github.com/cmstead/snipkit.git"
     },
-    "version": "0.2.0",
+    "version": "0.3.0",
     "engines": {
         "vscode": "^1.46.0"
     },
@@ -96,23 +96,26 @@
             }
         ],
         "languages": [
-			{
-				"id": "snipkit",
-				"extensions": [
-					".snipkit"
-				],
-				"configuration": "./snipkit-language/snipkit.configuration.json"
-			}
-		],
-		"grammars": [
-			{
-				"scopeName": "inline.snipkit",
-				"path": "./snipkit-language/snippet.tmLanguage.json",
-				"injectTo": ["source.json", "source.jsonc"],
-				"embeddedLanguages": {
-					"meta.embedded.inline.snipkit": "snipkit"
-				}
-			}
-		]
+            {
+                "id": "snipkit",
+                "extensions": [
+                    ".snipkit"
+                ],
+                "configuration": "./snipkit-language/snipkit.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "scopeName": "inline.snipkit",
+                "path": "./snipkit-language/snippet.tmLanguage.json",
+                "injectTo": [
+                    "source.json",
+                    "source.jsonc"
+                ],
+                "embeddedLanguages": {
+                    "meta.embedded.inline.snipkit": "snipkit"
+                }
+            }
+        ]
     }
 }
