@@ -19,6 +19,14 @@ function activate(context) {
 	});
 
 	context.subscriptions.push(disposable2);
+	
+	let disposable3 = vscode.commands.registerCommand('cmstead.snipkit.insertSnippet', function () {
+		require('./modules/commands/insert-snippet/insert-snippet-action')
+			.insertSnippet()
+		// 	.then(formatDocument);
+	});
+
+	context.subscriptions.push(disposable3);
 }
 
 function deactivate() { }

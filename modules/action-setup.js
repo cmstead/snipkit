@@ -1,29 +1,33 @@
 const { buildSelectionPath } = require('./selection-path');
 const { parseSource } = require('./parser/parser');
 const { transformSelectionToPosition } = require('./transforms/selection-to-position');
+const { showErrorMessage } = require('./ui-services/messageService');
+const { transformSelectionToLocation } = require('./edit-utils/code-range-transforms');
 
 const vscode = require('./vscode-service').getVscode();
 
 function actionSetup() {
 
     const activeTextEditor = vscode.window.activeTextEditor;
-    const location = transformSelectionToPosition(activeTextEditor.selection);
+    const position = transformSelectionToPosition(activeTextEditor.selection);
+    const location = transformSelectionToLocation(activeTextEditor.selection);
     const source = activeTextEditor.document.getText();
 
     try {
         const ast = parseSource(source);
-        const selectionPath = buildSelectionPath(ast.child, location);
+        const selectionPath = buildSelectionPath(ast.child, position);
 
         return {
             activeTextEditor,
             source,
 
             location,
+            position,
             ast,
             selectionPath
         }
     } catch (_) {
-        throw new Error('Unable to interpret JSON source; SnipKit cannot start')
+        showErrorMessage('Unable to interpret JSON source; SnipKit cannot start')
     }
 }
 

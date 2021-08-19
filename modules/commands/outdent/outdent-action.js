@@ -2,6 +2,7 @@ const { asyncActionSetup } = require("../../action-setup");
 const { getNewSourceEdit } = require("../../edit-utils/SourceEdit");
 const { transformLocationToRange } = require("../../edit-utils/textEditTransforms");
 const { getSourceSelection } = require("../../source-utilities");
+const { showErrorMessage } = require("../../ui-services/messageService");
 const { validateUserInput } = require("../../validatorService");
 
 function outdent() {
@@ -39,7 +40,7 @@ function outdent() {
         })
 
         .catch(function (error) {
-            console.log(error);
+            showErrorMessage(error.message);
         });
 }
 

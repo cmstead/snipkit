@@ -1,0 +1,18 @@
+{
+    "scopeName": "inline.snipkit",
+    "fileTypes": [],
+    "injectionSelector": "L:meta.structure.array.json",
+    "patterns": [
+        {
+            "include": "#snipkit-string"
+        }
+    ],
+    "repository": {
+
+        "snipkit-string": {
+            "name": "snipkit.string",
+            "contentName": "meta.embedded.inline.snipkit",
+            "match": ".*"
+        }
+    }
+}
