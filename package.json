@@ -63,17 +63,17 @@
             },
             {
                 "command": "cmstead.snipkit.insertSnippet",
-                "title": "Insert Snippet",
-                "description": "Insert snippet into document snippet file"
+                "title": "Insert SnipKit Snippet",
+                "description": "Insert SnipKit snippet into document snippet file"
             },
             {
                 "command": "cmstead.snipkit.pasteSnippet",
-                "title": "Paste New Snippet",
+                "title": "Paste Snippet from Clipboard",
                 "description": "Paste snippet from clipboard into snippet file"
             },
             {
                 "command": "cmstead.snipkit.formatAsBody",
-                "title": "Format as Snippet Body",
+                "title": "Format Text as Snippet Body",
                 "description": "Format selected text as a snippet body"
             },
             {
