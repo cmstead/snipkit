@@ -19,7 +19,7 @@ Snippet Creation:
 - Paste snippet from clipboard
     - From text to snippet:
         1. Highlight and copy text in a file
-        2. Open a snippet file (there's a menu option for this)
+        2. Open a snippet file (there's an action for this)
         3. Select "Paste Snippet" (menu AND keybinding)
 
 Snippet Editing:
@@ -40,11 +40,8 @@ Snippet Editing:
     - Windows: `ctrl+alt+[`
     - Mac: `cmd+alt+[`
 - Insert SnipKit Snippet
-    - Windows: `ctrl+alt+s, i`
-    - Mac: `cmd+alt+s, i`
-- Paste Snippet from Clipboard
-    - Windows: `ctrl+alt+s, p`
-    - Mac: `cmd+alt+s, p`
-- Format Text as Snippet Body
-    - Windows: `ctrl+alt+s, f`
-    - Mac: `cmd+alt+s, f`
+    - Windows: `ctrl+alt+i`
+    - Mac: `cmd+alt+i`
+- Select and Apply SnipKit Action
+    - Windows: `ctrl+alt+k`
+    - Mac: `cmd+alt+k`
