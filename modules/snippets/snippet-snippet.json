@@ -7,7 +7,7 @@
         "\t\t${body}",
         "\t],",
         "\t\"description\": \"$4\"",
-        "},"
+        "}"
     ],
     "description": "A snippet for creating new snippets"
 }

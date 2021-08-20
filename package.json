@@ -50,7 +50,8 @@
         "onCommand:cmstead.snipkit.pasteSnippet",
         "onCommand:cmstead.snipkit.formatAsBody",
         "onCommand:cmstead.snipkit.editSnippets",
-        "onCommand:cmstead.snipkit.selectAction"
+        "onCommand:cmstead.snipkit.selectAction",
+        "onCommand:cmstead.snipkit.makeThisASnippet"
     ],
     "contributes": {
         "commands": [
@@ -88,6 +89,11 @@
                 "command": "cmstead.snipkit.selectAction",
                 "title": "SnipKit: Select SnipKit Action",
                 "description": "Select a SnipKit action to run at cursor position"
+            },
+            {
+                "command": "cmstead.snipkit.makeThisASnippet",
+                "title": "Make This A Snippet",
+                "description": "Create a new snippet from selection"
             }
         ],
         "keybindings": [

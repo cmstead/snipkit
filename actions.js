@@ -49,5 +49,12 @@ module.exports = [
         path: './modules/commands/select-action/select-action-action',
         functionName: 'selectAction',
         type: SKIP
+    },
+    {
+        commandName: 'makeThisASnippet',
+        title: 'Make selection a snippet',
+        path: './modules/commands/make-this-a-snippet/make-this-a-snippet-action',
+        functionName: 'makeThisASnippet',
+        type: ACTION
     }
 ];

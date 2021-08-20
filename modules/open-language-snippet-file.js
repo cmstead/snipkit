@@ -23,7 +23,7 @@ function openFile(filePath) {
 
 function openLanguageSnippetFile(context) {
     const languageId = vscode.window.activeTextEditor.document.languageId;
-    const userRoot = path.join(context.globalStorageUri.path, '../../').slice(1);
+    const userRoot = path.join(context.globalStorageUri.path, '../../');
 
     const snippetRoot = path.join(
         userRoot,
