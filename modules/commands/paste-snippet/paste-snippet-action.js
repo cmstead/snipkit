@@ -20,7 +20,7 @@ function pasteSnippet() {
             return insertSnippetIntoDocument(actionSetup.location, snippetText);
         })
 
-        .catch(function(error){
+        .catch(function (error) {
             showErrorMessage(error.message);
         });
 }

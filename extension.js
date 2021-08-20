@@ -1,6 +1,7 @@
 const vscode = require('vscode');
 
 const actions = require('./actions');
+const { showErrorMessage } = require('./modules/ui-services/messageService');
 
 function activate(context) {
 	const formatDocument = () =>
@@ -8,8 +9,11 @@ function activate(context) {
 
 	actions.forEach(function (action) {
 		let disposable = vscode.commands.registerCommand(`cmstead.snipkit.${action.commandName}`, function () {
-			require(action.path)[action.functionName]()
-				.then(formatDocument);
+			require(action.path)[action.functionName](context)
+				.then(formatDocument)
+				.catch(function(error){
+					showErrorMessage(error.message);
+				});
 		});
 	
 		context.subscriptions.push(disposable);

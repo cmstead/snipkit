@@ -1,9 +1,7 @@
-const vscode = require('../../vscode-service').getVscode();
+const openLanguageSnippetFile = require('../../open-language-snippet-file');
 
-function editSnippets() {
-    vscode.commands.executeCommand("workbench.action.openSnippets");
-
-    return Promise.resolve(true);
+function editSnippets(context) {
+    return openLanguageSnippetFile(context);
 }
 
 module.exports = {
