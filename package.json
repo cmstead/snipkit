@@ -92,7 +92,7 @@
             },
             {
                 "command": "cmstead.snipkit.makeThisASnippet",
-                "title": "Make This A Snippet",
+                "title": "SnipKit: Make This A Snippet",
                 "description": "Create a new snippet from selection"
             }
         ],
@@ -162,7 +162,7 @@
                     "when": "editorLangId == json || editorLangId == jsonc"
                 },
                 {
-                    "command": "cmstead.snipkit.selectAction",
+                    "command": "cmstead.snipkit.makeThisASnippet",
                     "group": "snipkit@2"
                 },
                 {

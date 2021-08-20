@@ -5,9 +5,6 @@ function insertSnippetIntoDocument(location, snippetText) {
     const insertRange = transformLocationToRange(location);
     const snippetString = new vscode.SnippetString(snippetText);
 
-    console.log(insertRange);
-    console.log(snippetString);
-
     return vscode.window.activeTextEditor
         .insertSnippet(snippetString, insertRange)
 }

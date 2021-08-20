@@ -1,12 +1,11 @@
 const { asyncTextOnlyActionSetup, asyncActionSetup } = require("../../action-setup");
-const { transformSelectionToLocation } = require("../../edit-utils/code-range-transforms");
 const { insertSnippetIntoDocument } = require("../../edit-utils/snippet-utils");
 const openLanguageSnippetFile = require("../../open-language-snippet-file");
 const { getSourceSelection } = require("../../source-utilities");
-const { transformPositionToSelection } = require("../../transforms/selection-to-position");
-const { transformToBodyText } = require("../../transforms/string-to-body");
 const { showErrorMessage } = require("../../ui-services/messageService");
 const { validateUserInput } = require("../../validatorService");
+
+const { getPasteLocation, buildSnippetText } = require("./make-this-a-snippet");
 
 function makeThisASnippet(context) {
     let textActionSetup = null;
@@ -25,58 +24,29 @@ function makeThisASnippet(context) {
         .then((newSelectedSource) => selectedSource = newSelectedSource)
 
         .then(() => {
-            console.log('opening snippet file');
             return openLanguageSnippetFile(context);
         })
 
         .then(() => asyncActionSetup())
         .then((newActionSetup) => actionSetup = newActionSetup)
 
-        .then(() => {
+        .then(() => require('../../snippets/snippet-snippet.json'))
+
+        .then((snippetJson) => {
             const rootObject = actionSetup.selectionPath[0];
             const properties = rootObject.properties;
 
-            let pastePosition = null;
+            const pasteLocation = getPasteLocation(rootObject);
+            const snippetText = buildSnippetText(selectedSource, snippetJson, properties)
 
-            if (properties.length === 0) {
-                const pasteStart = {
-                    line: rootObject.position.start.line,
-                    column: rootObject.position.start.column + 1
-                };
-
-                pastePosition = {
-                    start: pasteStart,
-                    end: pasteStart
-                }
-            } else {
-                const lastProperty = properties[properties.length - 1];
-
-                const pasteStart = {
-                    line: lastProperty.value.position.end.line,
-                    column: lastProperty.value.position.end.column
-                };
-
-                pastePosition = {
-                    start: pasteStart,
-                    end: pasteStart
-                }
-            }
-
-            const pasteSelection = transformPositionToSelection(pastePosition);
-            const pasteLocation = transformSelectionToLocation(pasteSelection);
-
-            const snippetJson = require('../../snippets/snippet-snippet.json');
-            const bodyText = transformToBodyText(selectedSource);
-            const snippetText = snippetJson.body.join('\n').replace('${body}', bodyText);
-
-            const snippetPrefix = properties.length > 0 ? ',\n' : '';
-
-            return insertSnippetIntoDocument(pasteLocation, `${snippetPrefix}${snippetText}`);
+            return {
+                pasteLocation,
+                snippetText
+            };
         })
 
-        .then(() => new Promise(function (resolve) {
-            setTimeout(() => resolve(''), 15);
-        }))
+        .then(({ pasteLocation, snippetText }) =>
+            insertSnippetIntoDocument(pasteLocation, snippetText))
 
         .catch(function (error) {
             showErrorMessage(error.message);

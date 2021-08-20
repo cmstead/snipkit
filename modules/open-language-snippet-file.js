@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const { promisify } = require('util');
+const os = require('os');
 
 const vscode = require('./vscode-service').getVscode();
 
@@ -14,8 +15,8 @@ function statFile(filePath) {
 
 
 function openFile(filePath) {
-    const snippetUri = vscode.Uri.file(filePath);
-    
+    let snippetUri = vscode.Uri.file(filePath);
+
     return vscode.workspace.openTextDocument(snippetUri)
         .then((textDocument) =>
             vscode.window.showTextDocument(textDocument))
@@ -23,7 +24,11 @@ function openFile(filePath) {
 
 function openLanguageSnippetFile(context) {
     const languageId = vscode.window.activeTextEditor.document.languageId;
-    const userRoot = path.join(context.globalStorageUri.path, '../../');
+    let userRoot = path.join(context.globalStorageUri.path, '../../');
+
+    if (/^win/.test(os.platform())) {
+        userRoot = userRoot.slice(1);
+    }
 
     const snippetRoot = path.join(
         userRoot,
