@@ -42,6 +42,9 @@ Snippet Editing:
 - Insert SnipKit Snippet
     - Windows: `ctrl+alt+i`
     - Mac: `cmd+alt+i`
+- Make This a Snippet
+    - Windows: `ctrl+alt+m`
+    - Mac: `cmd+alt+m`
 - Select and Apply SnipKit Action
     - Windows: `ctrl+alt+k`
     - Mac: `cmd+alt+k`
