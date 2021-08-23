@@ -18,6 +18,7 @@
         "Other"
     ],
     "main": "./extension.js",
+    "icon": "./icon/snipkit.png",
     "scripts": {
         "lint": "eslint .",
         "pretest": "npm run lint",

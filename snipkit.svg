@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="snipkit.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.50868553"
+     inkscape:cx="11.795106"
+     inkscape:cy="429.53846"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <filter
+       id="selectable_hidder_filter"
+       width="1"
+       height="1"
+       x="0"
+       y="0"
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="LPE boolean visibility">
+      <feComposite
+         id="boolops_hidder_primitive"
+         result="composite1"
+         operator="arithmetic"
+         in2="SourceGraphic"
+         in="BackgroundImage" />
+    </filter>
+    <inkscape:path-effect
+       effect="bool_op"
+       id="path-effect29720"
+       is_visible="true"
+       lpeversion="1"
+       operand-path=""
+       operation="diff"
+       swap-operands="false"
+       rmv-inner="false"
+       filltype-this="from-curve"
+       filter=""
+       filltype-operand="from-curve" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect29599"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,2.1166667,0,1 @ F,0,0,1,0,2.1166667,0,1 @ F,0,0,1,0,2.1166667,0,1 @ F,0,0,1,0,2.1166667,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="8"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect23943"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,3.4395833,0,1 @ F,0,0,1,0,3.4395833,0,1 @ F,0,0,1,0,3.4395833,0,1 @ F,0,0,1,0,3.4395833,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="13"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect3064"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,1.5875,0,1 @ F,0,0,1,0,1.5875,0,1 @ F,0,0,1,0,1.5875,0,1 @ F,0,0,1,0,1.5875,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="6"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2563"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,8.2020833,0,1 @ F,0,0,1,0,8.2020833,0,1 @ F,0,0,1,0,8.2020833,0,1 @ F,0,0,1,0,8.2020833,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="31"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect892"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,14.2875,0,1 @ F,0,0,1,0,14.2875,0,1 @ F,0,0,1,0,14.2875,0,1 @ F,0,0,1,0,14.2875,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="54"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#15a2ff;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect868"
+       width="115.62292"
+       height="115.62292"
+       x="50.707771"
+       y="64.11306"
+       inkscape:path-effect="#path-effect892"
+       d="m 64.995271,64.11306 h 87.047919 a 14.2875,14.2875 45 0 1 14.2875,14.2875 v 87.04792 a 14.2875,14.2875 135 0 1 -14.2875,14.2875 H 64.995271 a 14.2875,14.2875 45 0 1 -14.2875,-14.2875 V 78.40056 a 14.2875,14.2875 135 0 1 14.2875,-14.2875 z"
+       sodipodi:type="rect"
+       inkscape:export-filename="C:\Users\christian.stead\Documents\projects\oss\snipkit\icon\snipkit.png"
+       inkscape:export-xdpi="28.110306"
+       inkscape:export-ydpi="28.110306" />
+    <path
+       id="rect23919"
+       style="fill:#d4e8ff;fill-opacity:1;stroke:#0f0f0f;stroke-width:1.14007;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 90.463889,75.24672 a 3.921373,3.921373 0 0 0 -3.921373,3.921373 v 18.203511 a 3.921373,3.921373 0 0 0 3.428254,3.886026 V 81.968315 a 2.4131527,2.4131527 0 0 1 2.413153,-2.413153 h 32.270607 a 2.4131527,2.4131527 0 0 1 2.41316,2.413153 v 19.289315 a 3.921373,3.921373 0 0 0 3.42825,-3.886026 V 79.168093 a 3.921373,3.921373 0 0 0 -3.92137,-3.921373 z"
+       inkscape:export-filename="C:\Users\christian.stead\Documents\projects\oss\snipkit\icon\snipkit.png"
+       inkscape:export-xdpi="28.110306"
+       inkscape:export-ydpi="28.110306" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#0f0f0f;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2561"
+       width="90.855614"
+       height="76.853928"
+       x="63.091423"
+       y="89.495041"
+       inkscape:path-effect="#path-effect2563"
+       d="m 71.293506,89.495041 h 74.451444 a 8.2020833,8.2020833 45 0 1 8.20209,8.202083 v 60.449766 a 8.2020833,8.2020833 135 0 1 -8.20209,8.20208 l -74.451444,0 a 8.2020833,8.2020833 45 0 1 -8.202083,-8.20208 V 97.697124 a 8.2020833,8.2020833 135 0 1 8.202083,-8.202083 z"
+       sodipodi:type="rect"
+       inkscape:export-filename="C:\Users\christian.stead\Documents\projects\oss\snipkit\icon\snipkit.png"
+       inkscape:export-xdpi="28.110306"
+       inkscape:export-ydpi="28.110306" />
+    <path
+       style="fill:#d4e8ff;fill-opacity:1;stroke:#0f0f0f;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2561-6"
+       width="30.838579"
+       height="17.737223"
+       x="93.099937"
+       y="101.25764"
+       inkscape:path-effect="#path-effect3064"
+       sodipodi:type="rect"
+       d="m 94.687437,101.25764 h 27.663583 a 1.5875,1.5875 45 0 1 1.5875,1.5875 v 14.56222 a 1.5875,1.5875 135 0 1 -1.5875,1.5875 H 94.687437 a 1.5875,1.5875 45 0 1 -1.5875,-1.5875 v -14.56222 a 1.5875,1.5875 135 0 1 1.5875,-1.5875 z"
+       inkscape:export-filename="C:\Users\christian.stead\Documents\projects\oss\snipkit\icon\snipkit.png"
+       inkscape:export-xdpi="28.110306"
+       inkscape:export-ydpi="28.110306" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:4.03477;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 62.794507,110.12625 H 154.24395"
+       id="path2956"
+       inkscape:export-filename="C:\Users\christian.stead\Documents\projects\oss\snipkit\icon\snipkit.png"
+       inkscape:export-xdpi="28.110306"
+       inkscape:export-ydpi="28.110306" />
+    <circle
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#15a2ff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.784197;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       id="path20799"
+       cx="108.51923"
+       cy="141.66051"
+       r="20.012682"
+       inkscape:export-filename="C:\Users\christian.stead\Documents\projects\oss\snipkit\icon\snipkit.png"
+       inkscape:export-xdpi="28.110306"
+       inkscape:export-ydpi="28.110306" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:74.3074px;line-height:1.25;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic';fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.85768"
+       x="86.223381"
+       y="157.03387"
+       id="text5103"
+       inkscape:export-filename="C:\Users\christian.stead\Documents\projects\oss\snipkit\icon\snipkit.png"
+       inkscape:export-xdpi="28.110306"
+       inkscape:export-ydpi="28.110306"><tspan
+         sodipodi:role="line"
+         id="tspan5101"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#ffffff;fill-opacity:1;stroke-width:1.85768"
+         x="86.223381"
+         y="157.03387">s</tspan></text>
+  </g>
+</svg>
