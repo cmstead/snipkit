@@ -1,4 +1,4 @@
-const { asyncActionSetup } = require("../../action-setup");
+const { asyncTextOnlyActionSetup } = require("../../action-setup");
 const { insertSnippetIntoDocument } = require("../../edit-utils/snippet-utils");
 const { openSelectList } = require("../../ui-services/inputService");
 const { showErrorMessage } = require("../../ui-services/messageService");
@@ -7,7 +7,7 @@ const { validateUserInput } = require("../../validatorService");
 function insertSnippet() {
     let actionSetup = null;
     let snippets = null;
-    return asyncActionSetup()
+    return asyncTextOnlyActionSetup()
         .then((newActionSetup) => actionSetup = newActionSetup)
 
         .then(() => require('../../../snippets.json'))
@@ -32,8 +32,6 @@ function insertSnippet() {
         .catch(function (error) {
             showErrorMessage(error.message);
         });
-
-    // return Promise.resolve('');
 }
 
 module.exports = {

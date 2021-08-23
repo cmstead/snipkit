@@ -117,6 +117,12 @@
                 "command": "cmstead.snipkit.selectAction",
                 "key": "ctrl+alt+k",
                 "mac": "cmd+alt+k"
+            },
+            {
+                "command": "cmstead.snipkit.makeThisASnippet",
+                "key": "ctrl+alt+m",
+                "mac": "cmd+alt+m",
+                "when": "editorHasSelection"
             }
         ],
         "snippets": [
@@ -164,7 +170,8 @@
                 },
                 {
                     "command": "cmstead.snipkit.makeThisASnippet",
-                    "group": "snipkit@2"
+                    "group": "snipkit@2",
+                    "when": "editorHasSelection"
                 },
                 {
                     "command": "cmstead.snipkit.editSnippets",
