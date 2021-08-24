@@ -56,5 +56,12 @@ module.exports = [
         path: './modules/commands/make-this-a-snippet/make-this-a-snippet-action',
         functionName: 'makeThisASnippet',
         type: ACTION
+    },
+    {
+        commandName: 'changeTabStopIndex',
+        title: 'Select a new tab stop index',
+        path: './modules/commands/change-tab-stop-index/change-tab-stop-index-action',
+        functionName: 'changeTabStopIndex',
+        type: ACTION
     }
 ];

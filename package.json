@@ -52,7 +52,8 @@
         "onCommand:cmstead.snipkit.formatAsBody",
         "onCommand:cmstead.snipkit.editSnippets",
         "onCommand:cmstead.snipkit.selectAction",
-        "onCommand:cmstead.snipkit.makeThisASnippet"
+        "onCommand:cmstead.snipkit.makeThisASnippet",
+        "onCommand:cmstead.snipkit.changeTabStopIndex"
     ],
     "contributes": {
         "commands": [
@@ -95,18 +96,25 @@
                 "command": "cmstead.snipkit.makeThisASnippet",
                 "title": "SnipKit: Make This A Snippet",
                 "description": "Create a new snippet from selection"
+            },
+            {
+                "command": "cmstead.snipkit.changeTabStopIndex",
+                "title": "Change Tab Stop Index",
+                "description": "Select a new tab stop index"
             }
         ],
         "keybindings": [
             {
                 "command": "cmstead.snipkit.indent",
                 "key": "ctrl+alt+]",
-                "mac": "cmd+alt+]"
+                "mac": "cmd+alt+]",
+                "when": "editorLangId == json || editorLangId == jsonc || editorLangId == snipkit"
             },
             {
                 "command": "cmstead.snipkit.outdent",
                 "key": "ctrl+alt+[",
-                "mac": "cmd+alt+["
+                "mac": "cmd+alt+[",
+                "when": "editorLangId == json || editorLangId == jsonc || editorLangId == snipkit"
             },
             {
                 "command": "cmstead.snipkit.insertSnippet",
@@ -123,6 +131,12 @@
                 "key": "ctrl+alt+m",
                 "mac": "cmd+alt+m",
                 "when": "editorHasSelection"
+            },
+            {
+                "command": "cmstead.snipkit.changeTabStopIndex",
+                "key": "ctrl+alt+n",
+                "mac": "cmd+alt+n",
+                "when": "editorLangId == json || editorLangId == jsonc || editorLangId == snipkit"
             }
         ],
         "snippets": [
@@ -193,6 +207,9 @@
                 },
                 {
                     "command": "cmstead.snipkit.formatAsBody"
+                },
+                {
+                    "command": "cmstead.snipkit.changeTabStopIndex"
                 }
             ]
         },
