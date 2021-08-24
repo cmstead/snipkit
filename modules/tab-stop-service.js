@@ -12,13 +12,14 @@ function computeOffsetData(index, stringLength, cursorLocation, currentToken) {
     return { start: tokenStart, end: offset };
 }
 
+const placeholderTokenPattern = /^[0-9]+\{\$$/;
+const bareTabStopToken = /^[0-9]+\$$/;
+const isAcceptableToken = (token) =>
+    placeholderTokenPattern.test(token)
+    || bareTabStopToken.test(token);
+
 function buildTabStopTokenData(snippetBodyString, cursorLocation) {
     const reversedBodyString = reverseString(snippetBodyString);
-    const placeholderTokenPattern = /^[0-9]+\{\$$/;
-    const bareTabStopToken = /^[0-9]+\$$/;
-    const isAcceptableToken = (token) =>
-        placeholderTokenPattern.test(token)
-        || bareTabStopToken.test(token);
 
     let nestedTabStops = [];
     let currentToken = '';
