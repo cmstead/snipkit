@@ -43,5 +43,18 @@ describe('tab stop service', function () {
 
             assert.deepEqual(offset, expectedOffset);
         });
+        
+        it('captures correct offset when tab stop contains a nested tab stop', function () {
+            const snippetBodyString = '12345${1:${2:foo}asldkjfa;sld}';
+            const cursorLocation = 17;
+
+            const offset = getOffset(snippetBodyString, cursorLocation);
+            const expectedOffset = {
+                start: 13,
+                end: 10
+            };
+
+            assert.deepEqual(offset, expectedOffset);
+        });
     });
 });

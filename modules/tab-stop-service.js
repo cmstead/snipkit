@@ -14,20 +14,28 @@ function computeOffsetData(index, stringLength, cursorLocation, currentToken) {
 
 function buildTabStopTokenData(snippetBodyString, cursorLocation) {
     const reversedBodyString = reverseString(snippetBodyString);
+    const completeTokenPattern = /^[0-9]+\{\$$/;
+
+    let nestedTabStops = [];
     let currentToken = '';
     let exitIndex = 0;
 
-    const completeTokenPattern = /^[0-9]+\{\$$/;
     for (let i = reversedBodyString.length - (cursorLocation + 1); i < reversedBodyString.length; i++) {
         const character = reversedBodyString[i];
 
         currentToken += character;
 
-        if (!/^[0-9]+\{?\$?$/.test(currentToken)) {
+        if(currentToken === '}') {
             currentToken = '';
-        } else if (completeTokenPattern.test(currentToken)) {
+            nestedTabStops.push(currentToken);
+        } else if (!/^[0-9]+\{?\$?$/.test(currentToken)) {
+            currentToken = '';
+        } else if (completeTokenPattern.test(currentToken) && nestedTabStops.length === 0) {
             exitIndex = i;
             break;
+        } else if(completeTokenPattern.test(currentToken)) {
+            currentToken = '';
+            nestedTabStops.pop();
         }
     }
 
