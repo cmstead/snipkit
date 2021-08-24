@@ -33,5 +33,15 @@ describe('tab stop service', function () {
 
             assert.deepEqual(offset, expectedOffset);
         });
+
+        it('returns null if cursor not in tab stop', function () {
+            const snippetBodyString = '12345${2:Something}';
+            const cursorLocation = 3;
+
+            const offset = getOffset(snippetBodyString, cursorLocation);
+            const expectedOffset = null;
+
+            assert.deepEqual(offset, expectedOffset);
+        });
     });
 });

@@ -17,6 +17,7 @@ function buildTabStopTokenData(snippetBodyString, cursorLocation) {
     let currentToken = '';
     let exitIndex = 0;
 
+    const completeTokenPattern = /^[0-9]+\{\$$/;
     for (let i = reversedBodyString.length - (cursorLocation + 1); i < reversedBodyString.length; i++) {
         const character = reversedBodyString[i];
 
@@ -24,22 +25,24 @@ function buildTabStopTokenData(snippetBodyString, cursorLocation) {
 
         if (!/^[0-9]+\{?\$?$/.test(currentToken)) {
             currentToken = '';
-        } else if (/[0-9]+\{?\$/.test(currentToken)) {
+        } else if (completeTokenPattern.test(currentToken)) {
             exitIndex = i;
             break;
         }
     }
 
     return {
-        currentToken,
+        currentToken: completeTokenPattern.test(currentToken) ? currentToken : '',
         exitIndex
     };
 }
 
 function getOffset(snippetBodyString, cursorLocation) {
-    const { currentToken, exitIndex } = buildTabStopTokenData(snippetBodyString, cursorLocation)
+    const { currentToken, exitIndex } = buildTabStopTokenData(snippetBodyString, cursorLocation);
 
-    return computeOffsetData(exitIndex, snippetBodyString.length, cursorLocation, currentToken)
+    return currentToken !== ''
+        ? computeOffsetData(exitIndex, snippetBodyString.length, cursorLocation, currentToken)
+        : null;
 }
 
 module.exports = {
