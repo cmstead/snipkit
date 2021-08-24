@@ -62,6 +62,29 @@ function getOffset(snippetBodyString, cursorLocation) {
         : null;
 }
 
+function getTabStopNumberOffset(snippetBodyString, offsetLocation, cursorLocation) {
+    const startLocation = cursorLocation - offsetLocation.start;
+    const endLocation = cursorLocation - offsetLocation.end;
+
+    const tabStopToken = snippetBodyString.substring(startLocation + 1, endLocation + 1);
+    let index = 0;
+
+    for(let i = index; i < tabStopToken.length; i++) {
+        const char = tabStopToken[i];
+
+        if(/[0-9]/.test(char)){
+            index = i;
+            break;
+        }
+    }
+
+    return {
+        end: offsetLocation.end,
+        start: index
+    };
+}
+
 module.exports = {
-    getOffset
+    getOffset,
+    getTabStopNumberOffset
 };

@@ -1,6 +1,6 @@
 const { assert} = require('chai');
 
-const { getOffset } = require('../modules/tab-stop-service');
+const { getOffset, getTabStopNumberOffset } = require('../modules/tab-stop-service');
 
 describe('tab stop service', function () {
     describe('get tab stop start offset', function () {
@@ -78,6 +78,22 @@ describe('tab stop service', function () {
             const expectedOffset = null;
 
             assert.deepEqual(offset, expectedOffset);
+        });
+    });
+
+    describe('get tab number offest data', function () {
+        it('returns tab offset information given cursor position', function () {
+            const snippetBodyString = '12345$1abcd';
+            const cursorLocation = 6;
+            const tabStopOffset = getOffset(snippetBodyString, cursorLocation);
+            
+            const tabStopNumberOffset = getTabStopNumberOffset(snippetBodyString, tabStopOffset, cursorLocation);
+            const expectedOffset = {
+                start: 1,
+                end: 0
+            };
+
+            assert.deepEqual(tabStopNumberOffset, expectedOffset);
         });
     });
 });
