@@ -4,6 +4,14 @@ function reverseString(stringToReverse) {
     return reversedBodyString.join('');
 }
 
+function computeOffsetData(index, cursorLocation, currentToken, reversedBodyString) {
+    const indexOffset = reversedBodyString.length - index - 1;
+    const offset = cursorLocation - currentToken.length + 1 - indexOffset;
+    const tokenStart = offset + currentToken.length;
+
+    return { start: tokenStart, end: offset };
+}
+
 function getOffset(snippetBodyString, cursorLocation) {
     const reversedBodyString = reverseString(snippetBodyString);
     let currentToken = '';
@@ -22,11 +30,7 @@ function getOffset(snippetBodyString, cursorLocation) {
         }
     }
 
-    const indexOffset = reversedBodyString.length - index - 1;
-    const offset = cursorLocation - currentToken.length + 1 - indexOffset;
-    const tokenStart = offset + currentToken.length;
-
-    return { start: tokenStart, end: offset };
+    return computeOffsetData(index, cursorLocation, currentToken, reversedBodyString)
 }
 
 module.exports = {
