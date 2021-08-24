@@ -56,5 +56,18 @@ describe('tab stop service', function () {
 
             assert.deepEqual(offset, expectedOffset);
         });
+
+        it('captures a non-placeholder tab stop', function () {
+            const snippetBodyString = '12345$1';
+            const cursorLocation = 6;
+
+            const offset = getOffset(snippetBodyString, cursorLocation);
+            const expectedOffset = {
+                start: 2,
+                end: 0
+            };
+
+            assert.deepEqual(offset, expectedOffset);
+        });
     });
 });

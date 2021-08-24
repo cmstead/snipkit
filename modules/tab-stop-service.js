@@ -14,7 +14,7 @@ function computeOffsetData(index, stringLength, cursorLocation, currentToken) {
 
 function buildTabStopTokenData(snippetBodyString, cursorLocation) {
     const reversedBodyString = reverseString(snippetBodyString);
-    const completeTokenPattern = /^[0-9]+\{\$$/;
+    const completeTokenPattern = /^[0-9]+\{?\$$/;
 
     let nestedTabStops = [];
     let currentToken = '';
