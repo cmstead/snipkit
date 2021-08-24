@@ -14,13 +14,12 @@ SnipKit adds a context menu item to take you directly to the edit/configure snip
 
 Snippet Creation:
 
-- Loads of predefined snippets
-    - Quickly adding things like tab stops and entirely new snippets
+- Make this a snippet
+    - Opens snippet file and uses selected text as the body for a new snippet
 - Paste snippet from clipboard
-    - From text to snippet:
-        1. Highlight and copy text in a file
-        2. Open a snippet file (there's an action for this)
-        3. Select "Paste Snippet" (menu AND keybinding)
+    - Pastes a new snippet using the text from your clipboard as the body
+- Loads of predefined snippets
+    - Allows for quick adding of new snippets as well as introducing snippet elements into existing snippet
 
 Snippet Editing:
 
@@ -30,6 +29,8 @@ Snippet Editing:
     - Snippet body content always needs indentation adjustment. Now you can indent and outdent without navigating through strings.
 - Insert SnipKit snippet into a string
     - Snippets deal heavily in strings, and snippets don't work very well inside strings. Insert snippet bypasses all of that mess.
+- Change tab stop index
+    - Provides a select dropdown (1-9 and 0) to select a new index for a tab stop
 
 ## Keybindings (Hotkeys) ##
 
@@ -45,6 +46,9 @@ Snippet Editing:
 - Make This a Snippet
     - Windows: `ctrl+alt+m`
     - Mac: `cmd+alt+m`
+- Change tab stop index
+    - Windows: `ctrl+alt+n`
+    - Mac: `cmd+alt+n`
 - Select and Apply SnipKit Action
     - Windows: `ctrl+alt+k`
     - Mac: `cmd+alt+k`
