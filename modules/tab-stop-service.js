@@ -1,5 +1,5 @@
 function getOffset(snippetBodyString, cursorLocation) {
-    return 0;
+    return { start: 3, end: 0 };
 }
 
 module.exports = {
