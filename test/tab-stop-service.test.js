@@ -82,7 +82,7 @@ describe('tab stop service', function () {
     });
 
     describe('get tab number offest data', function () {
-        it('returns tab offset information given cursor position', function () {
+        it('returns tab offset information given cursor position on bare tab stop', function () {
             const snippetBodyString = '12345$1abcd';
             const cursorLocation = 6;
             const tabStopOffset = getOffset(snippetBodyString, cursorLocation);
@@ -91,6 +91,20 @@ describe('tab stop service', function () {
             const expectedOffset = {
                 start: 1,
                 end: 0
+            };
+
+            assert.deepEqual(tabStopNumberOffset, expectedOffset);
+        });
+
+        it('returns tab offset information given cursor position on placeholder tab stop', function () {
+            const snippetBodyString = '12345${1:abcd}';
+            const cursorLocation = 9;
+            const tabStopOffset = getOffset(snippetBodyString, cursorLocation);
+            
+            const tabStopNumberOffset = getTabStopNumberOffset(snippetBodyString, tabStopOffset, cursorLocation);
+            const expectedOffset = {
+                start: 3,
+                end: 2
             };
 
             assert.deepEqual(tabStopNumberOffset, expectedOffset);

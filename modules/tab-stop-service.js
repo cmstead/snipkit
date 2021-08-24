@@ -80,7 +80,7 @@ function getTabStopNumberOffset(snippetBodyString, offsetLocation, cursorLocatio
 
     return {
         end: offsetLocation.end,
-        start: index
+        start: offsetLocation.start - index
     };
 }
 
