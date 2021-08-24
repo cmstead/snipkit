@@ -26,7 +26,14 @@
         ],
         "description": "A snippet for creating new snippets"
     },
-    "Placeholder Tab Stop": {
+    "Tab Stop -- Select List": {
+        "prefix": "tab-stop-select-list",
+        "body": [
+            "\\${${1|1,2,3,4,5,6,7,8,9,0|}|${2:${TM_SELECTED_TEXT:options}}|}"
+        ],
+        "description": "New tab stop with a drop-down of options"
+    },
+    "Tab Stop -- Placeholder": {
         "prefix": "snippet-tab-stop-placeholder",
         "body": [
             "\\${${1|1,2,3,4,5,6,7,8,9,0|}:${2:${TM_SELECTED_TEXT:Placeholder}}}"
