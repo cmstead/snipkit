@@ -22,9 +22,10 @@ function getOffset(snippetBodyString, cursorLocation) {
         }
     }
 
-    const offset = cursorLocation - currentToken.length + 1;
+    const indexOffset = reversedBodyString.length - index - 1;
+    const offset = cursorLocation - currentToken.length + 1 - indexOffset;
     const tokenStart = offset + currentToken.length;
-    
+
     return { start: tokenStart, end: offset };
 }
 

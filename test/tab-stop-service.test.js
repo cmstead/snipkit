@@ -23,5 +23,15 @@ describe('tab stop service', function () {
 
             assert.deepEqual(offset, expectedOffset);
         });
+
+        it('gets the tab stop start offset information when cursor is inside tab stop, tab stop not at beginning of string', function () {
+            const snippetBodyString = '12345${2:Something}';
+            const cursorLocation = 9;
+
+            const offset = getOffset(snippetBodyString, cursorLocation);
+            const expectedOffset = { start: 5, end: 2 };
+
+            assert.deepEqual(offset, expectedOffset);
+        });
     });
 });
