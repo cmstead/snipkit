@@ -14,33 +14,41 @@ function computeOffsetData(index, stringLength, cursorLocation, currentToken) {
 
 function buildTabStopTokenData(snippetBodyString, cursorLocation) {
     const reversedBodyString = reverseString(snippetBodyString);
-    const completeTokenPattern = /^[0-9]+\{?\$$/;
+    const placeholderTokenPattern = /^[0-9]+\{\$$/;
+    const bareTabStopToken = /^[0-9]+\$$/;
+    const isAcceptableToken = (token) =>
+        placeholderTokenPattern.test(token)
+        || bareTabStopToken.test(token);
 
     let nestedTabStops = [];
     let currentToken = '';
     let exitIndex = 0;
 
-    for (let i = reversedBodyString.length - (cursorLocation + 1); i < reversedBodyString.length; i++) {
+    const startPosition = reversedBodyString.length - (cursorLocation + 1);
+
+    for (let i = startPosition; i < reversedBodyString.length; i++) {
         const character = reversedBodyString[i];
 
         currentToken += character;
 
-        if(currentToken === '}') {
+        if (currentToken === '}') {
             currentToken = '';
             nestedTabStops.push(currentToken);
         } else if (!/^[0-9]+\{?\$?$/.test(currentToken)) {
             currentToken = '';
-        } else if (completeTokenPattern.test(currentToken) && nestedTabStops.length === 0) {
+        } else if (
+            (placeholderTokenPattern.test(currentToken) && nestedTabStops.length === 0)
+            || (bareTabStopToken.test(currentToken) && startPosition === i - currentToken.length + 1)) {
             exitIndex = i;
             break;
-        } else if(completeTokenPattern.test(currentToken)) {
+        } else if (placeholderTokenPattern.test(currentToken)) {
             currentToken = '';
             nestedTabStops.pop();
         }
     }
 
     return {
-        currentToken: completeTokenPattern.test(currentToken) ? currentToken : '',
+        currentToken: isAcceptableToken(currentToken) ? currentToken : '',
         exitIndex
     };
 }
