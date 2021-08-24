@@ -4,18 +4,18 @@ function reverseString(stringToReverse) {
     return reversedBodyString.join('');
 }
 
-function computeOffsetData(index, cursorLocation, currentToken, reversedBodyString) {
-    const indexOffset = reversedBodyString.length - index - 1;
+function computeOffsetData(index, stringLength, cursorLocation, currentToken) {
+    const indexOffset = stringLength - index - 1;
     const offset = cursorLocation - currentToken.length + 1 - indexOffset;
     const tokenStart = offset + currentToken.length;
 
     return { start: tokenStart, end: offset };
 }
 
-function getOffset(snippetBodyString, cursorLocation) {
+function buildTabStopTokenData(snippetBodyString, cursorLocation) {
     const reversedBodyString = reverseString(snippetBodyString);
     let currentToken = '';
-    let index = 0;
+    let exitIndex = 0;
 
     for (let i = reversedBodyString.length - (cursorLocation + 1); i < reversedBodyString.length; i++) {
         const character = reversedBodyString[i];
@@ -25,12 +25,21 @@ function getOffset(snippetBodyString, cursorLocation) {
         if (!/^[0-9]+\{?\$?$/.test(currentToken)) {
             currentToken = '';
         } else if (/[0-9]+\{?\$/.test(currentToken)) {
-            index = i;
+            exitIndex = i;
             break;
         }
     }
 
-    return computeOffsetData(index, cursorLocation, currentToken, reversedBodyString)
+    return {
+        currentToken,
+        exitIndex
+    };
+}
+
+function getOffset(snippetBodyString, cursorLocation) {
+    const { currentToken, exitIndex } = buildTabStopTokenData(snippetBodyString, cursorLocation)
+
+    return computeOffsetData(exitIndex, snippetBodyString.length, cursorLocation, currentToken)
 }
 
 module.exports = {
