@@ -1,9 +1,8 @@
-const path = require('path');
 const fs = require('fs');
 const { promisify } = require('util');
-const os = require('os');
 
 const vscode = require('./vscode-service').getVscode();
+const { buildSnippetFilePath } = require('./snippet-file-utils');
 
 function statFile(filePath) {
     try {
@@ -12,7 +11,6 @@ function statFile(filePath) {
         return false;
     }
 }
-
 
 function openFile(filePath) {
     let snippetUri = vscode.Uri.file(filePath);
@@ -23,22 +21,7 @@ function openFile(filePath) {
 }
 
 function openLanguageSnippetFile(context) {
-    const languageId = vscode.window.activeTextEditor.document.languageId;
-    let userRoot = path.join(context.globalStorageUri.path, '../../');
-
-    if (/^win/.test(os.platform())) {
-        userRoot = userRoot.slice(1);
-    }
-
-    const snippetRoot = path.join(
-        userRoot,
-        "snippets"
-    );
-
-    const snippetFilePath = path.join(
-        snippetRoot,
-        `${languageId}.json`
-    );
+    const snippetFilePath = buildSnippetFilePath(context);
 
     const snippetFileExists = statFile(snippetFilePath);
     const asyncWriteFile = promisify(fs.writeFile);
