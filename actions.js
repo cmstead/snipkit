@@ -63,5 +63,12 @@ module.exports = [
         path: './modules/commands/change-tab-stop-index/change-tab-stop-index-action',
         functionName: 'changeTabStopIndex',
         type: ACTION
+    },
+    {
+        commandName: 'findSnippet',
+        title: 'Find Language Snippet',
+        path: './modules/commands/find-snippet/find-snippet-action',
+        functionName: 'findSnippet',
+        type: ACTION
     }
 ];
