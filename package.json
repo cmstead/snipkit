@@ -1,6 +1,6 @@
 {
     "name": "snipkit",
-    "displayName": "SnipKit",
+    "displayName": "SnipKit: Snippet Editor",
     "publisher": "cmstead",
     "description": "Enhanced snippet creation and editing for VS Code",
     "repository": {
