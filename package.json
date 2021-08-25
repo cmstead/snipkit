@@ -1,13 +1,13 @@
 {
     "name": "snipkit",
-    "displayName": "SnipKit: Snippet Editor",
+    "displayName": "SnipKit: Enhanced Snippet Editing",
     "publisher": "cmstead",
     "description": "Enhanced snippet creation and editing for VS Code",
     "repository": {
         "type": "git",
         "url": "https://github.com/cmstead/snipkit.git"
     },
-    "version": "0.10.2",
+    "version": "0.10.3",
     "engines": {
         "vscode": "^1.46.0"
     },
