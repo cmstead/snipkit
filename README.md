@@ -8,6 +8,8 @@ Code automation through the use of snippets is a fast, easy way to quickly recla
 
 SnipKit provides tools to make it easier to create, and maintain snippets.
 
+[Watch a Video!](https://www.youtube.com/watch?v=SMsNNKkrrdQ)
+
 Easy access to user snippets:
 
 SnipKit adds a context menu item to take you directly to the edit/configure snippets selection list. Rather than needing to remember the palette hotkey, and the correct search term, just click the menu item and type the language you want to work with.
