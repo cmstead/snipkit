@@ -23,6 +23,13 @@ module.exports = [
         type: ACTION
     },
     {
+        commandName: 'insertZero',
+        title: 'Insert 0-Index Tab Stop Into Document',
+        path: './modules/commands/insert-zero/insert-zero-action',
+        functionName: 'insertZero',
+        type: SKIP
+    },
+    {
         commandName: 'pasteSnippet',
         title: 'Paste Snippet From Clipboard',
         path: './modules/commands/paste-snippet/paste-snippet-action',

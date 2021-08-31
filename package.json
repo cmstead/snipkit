@@ -49,6 +49,7 @@
         "onCommand:cmstead.snipkit.indent",
         "onCommand:cmstead.snipkit.outdent",
         "onCommand:cmstead.snipkit.insertSnippet",
+        "onCommand:cmstead.snipkit.insertZero",
         "onCommand:cmstead.snipkit.pasteSnippet",
         "onCommand:cmstead.snipkit.formatAsBody",
         "onCommand:cmstead.snipkit.editSnippets",
@@ -73,6 +74,11 @@
                 "command": "cmstead.snipkit.insertSnippet",
                 "title": "Insert SnipKit Snippet",
                 "description": "Insert SnipKit snippet into document snippet file"
+            },
+            {
+                "command": "cmstead.snipkit.insertZero",
+                "title": "Insert Zero-Indexed Tab Stop",
+                "description": "Insert Zero-Indexed Tab Stop into document snippet file"
             },
             {
                 "command": "cmstead.snipkit.pasteSnippet",
@@ -149,6 +155,11 @@
                 "command": "cmstead.snipkit.findSnippet",
                 "key": "ctrl+alt+f",
                 "mac": "cmd+alt+f"
+            },
+            {
+                "command": "cmstead.snipkit.findSnippet",
+                "key": "ctrl+alt+0",
+                "mac": "cmd+alt+0"
             }
         ],
         "snippets": [
